@@ -42,9 +42,9 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto " href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                    <li><a class="nav-link scrollto " href="#hero">International</a></li>
+                    <li><a class="nav-link scrollto" href="#about">National</a></li>
+                    <li><a class="nav-link scrollto" href="#services">Sports</a></li>
                     <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
                     <li><a class="nav-link scrollto" href="#team">Team</a></li>
                     <li><a class="active" href="blog.html">Blog</a></li>
@@ -96,59 +96,41 @@
                             </h2>
                             <div class="entry-meta">
                                 <ul>
-                                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">John Doe</a></li>
-                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>
+                                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#">{{i.author}}</a></li>
+                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="#"><time datetime={{i.publishedAt}}>{{i.publishedAt}}</time></a></li>
+                                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="#">{{i.source.name}}</a></li>
                                 </ul>
                             </div>
                             <div class="entry-content">
                                 <p>
-                                  {{i.content}}
+                                  {{i.description}}
                                 </p>
                                 <div class="read-more">
-                                    <a href="#">Read More</a>
+                                    <a href={{i.url}}>Read More</a>
                                 </div>
                             </div>
                         </article><!-- End blog entry -->
                         {% endfor %}
                         {% endif %}
 
-
-            
-
-                        <div class="blog-pagination">
-                            <ul class="justify-content-center">
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                            </ul>
-                        </div>
-
                     </div><!-- End blog entries list -->
 
-          <div class="col-lg-4">
-
-            <div class="sidebar">
-
-              <h3 class="sidebar-title">Search</h3>
-              <div class="sidebar-item search-form">
-                <form action="">
-                  <input type="text">
-                  <button type="submit"><i class="bi bi-search"></i></button>
-                </form>
-              </div><!-- End sidebar search formn-->
-
-              <h3 class="sidebar-title">Categories</h3>
-              <div class="sidebar-item categories">
-                <ul>
-                  <li><a href="#">General <span>(25)</span></a></li>
-                  <li><a href="#">Lifestyle <span>(12)</span></a></li>
-                  <li><a href="#">Travel <span>(5)</span></a></li>
-                  <li><a href="#">Design <span>(22)</span></a></li>
-                  <li><a href="#">Creative <span>(8)</span></a></li>
-                  <li><a href="#">Educaion <span>(14)</span></a></li>
-                </ul>
-              </div><!-- End sidebar categories-->
+                    <div class="col-lg-4">
+                        <div class="sidebar">
+                            <!-- Live Cricket Scores -->
+                            <h3 class="sidebar-title">Live Cricket Scores</h3>
+                            <div class="sidebar-item categories">
+                                <ul>
+                                    <li>{{description}}</li>
+                                    <li>{{location}}</li>
+                                    <li>{{status}}</li>
+                                    <li>{{current}}</li>
+                                    <li>{{team1}}</li>
+                                    <li>{{team2}}</li>
+                                    <li>{{link}}</li>
+                                </ul>
+                            </div>
+                            <!-- End of Live Cricket Scores-->
 
               <h3 class="sidebar-title">Recent Posts</h3>
               <div class="sidebar-item recent-posts">
