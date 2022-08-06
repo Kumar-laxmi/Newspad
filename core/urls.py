@@ -20,7 +20,12 @@ from app.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', international),
+    path('', general),
     path('national/', national),
     path('sports/', sports),
+    path('business/', business),
+    path('entertainment/', entertainment),
+    path('health/', health),
+    path('science/', science),
+    path('technology/', technology),
 ]

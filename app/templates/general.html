@@ -118,8 +118,8 @@
                     <div class="col-lg-4">
                         <div class="sidebar">
                             <!-- Live Cricket Scores -->
+                            {% if dataFoundCricket %}
                             <h3 class="sidebar-title">Live Cricket Scores</h3>
-                            {% if dataFound %}
                             <div class="sidebar-item categories">
                                 <ul>
                                     <li>{{description}}</li>
@@ -128,18 +128,43 @@
                                     <li>{{current}}</li>
                                     <li>{{team1}}</li>
                                     <li>{{team2}}</li>
-                                    <li>{{link}}</li>
+                                    <li><a class="getstarted scrollto" href={{link}}>See More</a></li>
                                 </ul>
                             </div>
                             {% else %}
                             <div class="sidebar-item categories">
-                                <div class="card bg-transparent border-0">
-                                    <div class="card-body">
-                                        <p>No Live Cricket Scores</p>
-                                    </div>
+                                <ul>
+                                    <li>No Live Cricket Scores</li>
+                                </ul>
                             </div>
                             {% endif %}
                             <!-- End of Live Cricket Scores-->
+
+                            <!-- Live Crypto Stats -->
+                            {% if dataFoundCrypto %}
+                            <h3 class="sidebar-title">Live Crypto Stats</h3>
+                            <div class="sidebar-item categories">
+                                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                                    <thead>
+                                        <tr class="text-dark">
+                                            <th scope="col">Cryptocurrency</th>
+                                            <th scope="col">Price</th>
+                                        </tr>
+                                    </thead>
+                                <tbody>
+                                    {% if crypto_data %}
+                                    {% for i in crypto_data %}
+                                    <tr>
+                                        <td>{{i.symbol}}</td>
+                                        <td>{{i.price}}</td>
+                                    </tr>
+                                    {% endfor %}
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                          </div>
+                          {% endif %}
+                            <!-- End of live Crypto Stats -->
 
               <h3 class="sidebar-title">Recent Posts</h3>
               <div class="sidebar-item recent-posts">
@@ -175,20 +200,17 @@
 
               </div><!-- End sidebar recent posts-->
 
-              <h3 class="sidebar-title">Tags</h3>
+              <h3 class="sidebar-title">Category</h3>
               <div class="sidebar-item tags">
                 <ul>
-                  <li><a href="#">App</a></li>
-                  <li><a href="#">IT</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Mac</a></li>
-                  <li><a href="#">Design</a></li>
-                  <li><a href="#">Office</a></li>
-                  <li><a href="#">Creative</a></li>
-                  <li><a href="#">Studio</a></li>
-                  <li><a href="#">Smart</a></li>
-                  <li><a href="#">Tips</a></li>
-                  <li><a href="#">Marketing</a></li>
+                  <li><a href="">General</a></li>
+                  <li><a href="/national">National</a></li>
+                  <li><a href="/sports">Sports</a></li>
+                  <li><a href="/business">Business</a></li>
+                  <li><a href="/entertainment">Entertainment</a></li>
+                  <li><a href="/health">Health</a></li>
+                  <li><a href="/science">Science</a></li>
+                  <li><a href="/technology">Technology</a></li>
                 </ul>
               </div><!-- End sidebar tags-->
 
@@ -211,7 +233,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-12 text-center">
             <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <p>Please subscribe is you like this website</p>
           </div>
           <div class="col-lg-6">
             <form action="" method="post">
@@ -226,16 +248,16 @@
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-5 col-md-12 footer-info">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="#" class="logo d-flex align-items-center">
               <img src="{% static 'img/logo.png' %}" alt="">
-              <span>FlexStart</span>
+              <span>NewsPad</span>
             </a>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <p>A Collection of all Realtime news powered by News API.</p>
             <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              <a href="https://twitter.com/KumarLaxmikant2" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="https://github.com/Kumar-laxmi" class="facebook"><i class="bi bi-github"></i></a>
+              <a href="https://www.instagram.com/kum_lax.23/" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/kumar-laxmikant-24a938202/" class="linkedin"><i class="bi bi-linkedin"></i></a>
             </div>
           </div>
 
