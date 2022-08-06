@@ -2,8 +2,9 @@
   This project is already uploaded to my GitHub Account where I have deployed this project
   You can find the project here: https://github.com/Kumar-laxmi/Newspad
 )
+![github_banner](https://user-images.githubusercontent.com/76027425/183254272-e6ca9ee8-e33c-4c7b-a355-b9f62ed1564b.png)
 
-<img src="./app/static/image/github_banner.png" alt="NewsPad - News Application">
+
 
 ## Introduction
 <p>
