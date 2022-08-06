@@ -104,17 +104,30 @@
                             {% if dataFoundCricket %}
                             <h3 class="sidebar-title">Live Cricket Scores</h3>
                             <div class="sidebar-item categories">
-                                <ul>
-                                    <li>{{description}}</li>
-                                    <li>{{location}}</li>
-                                    <li>{{status}}</li>
-                                    <li>{{current}}</li>
-                                    <li>{{team1}}</li>
-                                    <li>{{team2}}</li>
-                                    <li>
-                                        <a href={{link}} class="btn btn-outline-dark">See More</a>
-                                    </li>
-                                </ul>
+                                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                                    <thead>
+                                        <tr class="text-dark">
+                                            <th scope="col">{{description}}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{{location}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{current}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{team1}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{team2}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href={{link}} class="btn btn-outline-dark">See More</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                             {% else %}
                             <div class="sidebar-item categories">
@@ -136,58 +149,58 @@
                                             <th scope="col">Price</th>
                                         </tr>
                                     </thead>
-                                <tbody>
-                                    {% if crypto_data %}
-                                    {% for i in crypto_data %}
-                                    <tr>
-                                        <td>{{i.symbol}}</td>
-                                        <td>{{i.price}}</td>
-                                    </tr>
-                                    {% endfor %}
-                                    {% endif %}
-                                </tbody>
-                            </table>
-                          </div>
-                          {% endif %}
+                                    <tbody>
+                                        {% if crypto_data %}
+                                        {% for i in crypto_data %}
+                                        <tr>
+                                            <td>{{i.symbol}}</td>
+                                            <td>{{i.price}}</td>
+                                        </tr>
+                                        {% endfor %}
+                                        {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            {% endif %}
                             <!-- End of live Crypto Stats -->
 
-                          <h3 class="sidebar-title">Recent Posts</h3>
-                          <div class="sidebar-item recent-posts">
+                            <h3 class="sidebar-title">Recent Posts</h3>
+                            <div class="sidebar-item recent-posts">
 
-                              <!-- Start of first Recent Posts -->
-                              {% if articles %}
-                              {% for i in articles %}
-                              <div class="post-item clearfix">
-                                  <img src={{i.urlToImage}} alt=""> 
-                                  <h4><a href={{i.url}}>{{i.title}}</a></h4>
-                                  <time datetime={{i.publishedAt}}>{{i.publishedAt}}</time>
-                              </div>
-                              {% endfor %}
-                              {% endif %}
-                              <!-- End of first Recent Post -->
+                                <!-- Start of first Recent Posts -->
+                                {% if articles %}
+                                {% for i in articles %}
+                                <div class="post-item clearfix">
+                                    <img src={{i.urlToImage}} alt=""> 
+                                    <h4><a href={{i.url}}>{{i.title}}</a></h4>
+                                    <time datetime={{i.publishedAt}}>{{i.publishedAt}}</time>
+                                </div>
+                                {% endfor %}
+                                {% endif %}
+                                <!-- End of first Recent Post -->
 
-                          </div><!-- End sidebar recent posts-->
+                            </div><!-- End sidebar recent posts-->
 
-                          <h3 class="sidebar-title">Category</h3>
-                          <div class="sidebar-item tags">
-                              <ul>
-                                  <li><a href="">General</a></li>
-                                  <li><a href="/national">National</a></li>
-                                  <li><a href="/sports">Sports</a></li>
-                                  <li><a href="/business">Business</a></li>
-                                  <li><a href="/entertainment">Entertainment</a></li>
-                                  <li><a href="/health">Health</a></li>
-                                  <li><a href="/science">Science</a></li>
-                                  <li><a href="/technology">Technology</a></li>
-                              </ul>
-                          </div><!-- End sidebar tags-->
+                            <h3 class="sidebar-title">Category</h3>
+                            <div class="sidebar-item tags">
+                                <ul>
+                                    <li><a href="">General</a></li>
+                                    <li><a href="/national">National</a></li>
+                                    <li><a href="/sports">Sports</a></li>
+                                    <li><a href="/business">Business</a></li>
+                                    <li><a href="/entertainment">Entertainment</a></li>
+                                    <li><a href="/health">Health</a></li>
+                                    <li><a href="/science">Science</a></li>
+                                    <li><a href="/technology">Technology</a></li>
+                                </ul>
+                            </div><!-- End sidebar tags-->
 
-                      </div><!-- End sidebar -->
+                        </div><!-- End sidebar -->
 
-                  </div><!-- End blog sidebar -->
-              </div>
-          </div>
-      </section><!-- End Blog Section -->
+                    </div><!-- End blog sidebar -->
+                </div>
+            </div>
+        </section><!-- End Blog Section -->
 
     </main><!-- End #main -->
 

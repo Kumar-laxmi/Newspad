@@ -1,0 +1,307 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Newspad - Django based news application</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{% static 'img/favicon.png' %}" rel="icon">
+    <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <a href="#" class="logo d-flex align-items-center">
+                  <img src="{% static 'img/logo.png' %}" alt="">
+                  <span>NewsPad</span>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto" href="../">General</a></li>
+                    <li><a class="nav-link scrollto" href="/national">National</a></li>
+                    <li><a class="nav-link scrollto" href="/sports">Sports</a></li>
+                    <li><a class="nav-link scrollto" href="/business">Business</a></li>
+                    <li><a class="nav-link scrollto" href="/entertainment">Entertainment</a></li>
+                    <li><a class="active" href="/health">Health</a></li>
+                    <li><a class="nav-link scrollto" href="/science">Science</a></li>
+                    <li><a class="nav-link scrollto" href="/technology">Technology</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    <br/><br/><br/><br/><br/><br/>
+
+    <main id="main">
+        <!-- ======= Blog Section ======= -->
+        <section id="blog" class="blog">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+          
+                    <!-- First Pagination -->
+                    <div class="col-lg-8 entries">
+
+                        {% if articles %}
+                        {% for i in articles %}
+                        <article class="entry">
+                            <div class="entry-img">
+                                <img src={{i.urlToImage}} alt="" class="img-fluid">
+                            </div>
+                            <h2 class="entry-title">
+                                <a href="#">{{i.title}}</a>
+                            </h2>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#">{{i.author}}</a></li>
+                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="#"><time datetime={{i.publishedAt}}>{{i.publishedAt}}</time></a></li>
+                                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="#">{{i.source.name}}</a></li>
+                                </ul>
+                            </div>
+                            <div class="entry-content">
+                                <p>
+                                  {{i.description}}
+                                </p>
+                                <div class="read-more">
+                                    <a href={{i.url}}>Read More</a>
+                                </div>
+                            </div>
+                        </article><!-- End blog entry -->
+                        {% endfor %}
+                        {% endif %}
+
+                    </div><!-- End blog entries list -->
+
+                    <div class="col-lg-4">
+                        <div class="sidebar">
+                            <!-- Live Cricket Scores -->
+                            {% if dataFoundCricket %}
+                            <h3 class="sidebar-title">Live Cricket Scores</h3>
+                            <div class="sidebar-item categories">
+                                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                                    <thead>
+                                        <tr class="text-dark">
+                                            <th scope="col">{{description}}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{{location}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{current}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{team1}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{team2}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href={{link}} class="btn btn-outline-dark">See More</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            {% else %}
+                            <div class="sidebar-item categories">
+                                <ul>
+                                    <li>No Live Cricket Scores</li>
+                                </ul>
+                            </div>
+                            {% endif %}
+                            <!-- End of Live Cricket Scores-->
+
+                            <!-- Live Crypto Stats -->
+                            {% if dataFoundCrypto %}
+                            <h3 class="sidebar-title">Live Crypto Stats</h3>
+                            <div class="sidebar-item categories">
+                                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                                    <thead>
+                                        <tr class="text-dark">
+                                            <th scope="col">Cryptocurrency</th>
+                                            <th scope="col">Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% if crypto_data %}
+                                        {% for i in crypto_data %}
+                                        <tr>
+                                            <td>{{i.symbol}}</td>
+                                            <td>{{i.price}}</td>
+                                        </tr>
+                                        {% endfor %}
+                                        {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            {% endif %}
+                            <!-- End of live Crypto Stats -->
+
+                            <h3 class="sidebar-title">Recent Posts</h3>
+                            <div class="sidebar-item recent-posts">
+
+                                <!-- Start of first Recent Posts -->
+                                {% if general_articles %}
+                                {% for i in general_articles %}
+                                <div class="post-item clearfix">
+                                    <img src={{i.urlToImage}} alt=""> 
+                                    <h4><a href={{i.url}}>{{i.title}}</a></h4>
+                                    <time datetime={{i.publishedAt}}>{{i.publishedAt}}</time>
+                                </div>
+                                {% endfor %}
+                                {% endif %}
+                                <!-- End of first Recent Post -->
+
+                            </div><!-- End sidebar recent posts-->
+
+                            <h3 class="sidebar-title">Category</h3>
+                            <div class="sidebar-item tags">
+                                <ul>
+                                    <li><a href="../">General</a></li>
+                                    <li><a href="/national">National</a></li>
+                                    <li><a href="/sports">Sports</a></li>
+                                    <li><a href="/business">Business</a></li>
+                                    <li><a href="/entertainment">Entertainment</a></li>
+                                    <li><a href="/health">Health</a></li>
+                                    <li><a href="/science">Science</a></li>
+                                    <li><a href="/technology">Technology</a></li>
+                                </ul>
+                            </div><!-- End sidebar tags-->
+
+                        </div><!-- End sidebar -->
+
+                    </div><!-- End blog sidebar -->
+                </div>
+            </div>
+        </section><!-- End Blog Section -->
+
+    </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 text-center">
+            <h4>Our Newsletter</h4>
+            <p>Please subscribe is you like this website</p>
+          </div>
+          <div class="col-lg-6">
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-info">
+            <a href="#" class="logo d-flex align-items-center">
+              <img src="{% static 'img/logo.png' %}" alt="">
+              <span>NewsPad</span>
+            </a>
+            <p>A Collection of all Realtime news powered by News API.</p>
+            <div class="social-links mt-3">
+              <a href="https://twitter.com/KumarLaxmikant2" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="https://github.com/Kumar-laxmi" class="facebook"><i class="bi bi-github"></i></a>
+              <a href="https://www.instagram.com/kum_lax.23/" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/kumar-laxmikant-24a938202/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Realtime International News</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Realtime National News</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Realtime Sports News</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Live Sports News</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <h4>Contact Us</h4>
+            <p>
+              Sector - 19, Dwarka <br>
+              New Delhi, DL 110075<br>
+              India <br><br>
+              <strong>Phone:</strong> +91 93151 98206<br>
+              <strong>Email:</strong> laxmikantk2002@gmail.com<br>
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>NewsPad</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://github.com/Kumar-laxmi">Kumar Laxmikant</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
