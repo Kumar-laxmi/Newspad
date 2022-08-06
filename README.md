@@ -3,7 +3,7 @@
   You can find the project here: https://github.com/Kumar-laxmi/Newspad
 )
 
-<img src="./app/static/image/banner.png" alt="NewsPad - News Application">
+<img src="./app/static/image/github_banner.png" alt="NewsPad - News Application">
 
 ## Introduction
 <p>
