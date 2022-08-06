@@ -24,6 +24,7 @@ def international(request):
     link = "https://sports.ndtv.com/" + \
         section.find('a', class_='scr_ful-sbr-txt').get('href')
     try:
+        dataFound = True
         status = section.find_all('div', class_="scr_dt-red")[1].text
         block = section.find_all('div', class_='scr_tm-wrp')
         team1_block = block[0]
@@ -36,6 +37,7 @@ def international(request):
         team2 = team2_name.strip() + ":" + team2_score.strip()
     except:
         print("Data not available")
+        dataFound = False
         description = "Data not available"
         location = "Data not available"
         current = "Data not available"
@@ -46,6 +48,7 @@ def international(request):
 
     context = {
         'articles': articles,
+        'dataFound': dataFound,
         'description': description,
         'location': location,
         'status': status,
