@@ -2,28 +2,23 @@
   This project is already uploaded to my GitHub Account where I have deployed this project
   You can find the project here: https://github.com/Kumar-laxmi/Newspad
 )
+
+
 ![github_banner](https://user-images.githubusercontent.com/76027425/183254272-e6ca9ee8-e33c-4c7b-a355-b9f62ed1564b.png)
-
-
-
-## Introduction
-<p>
-  To be updated...
-</p>
 
 ## Aim
 <p> 
-  To be updated...
+  To display news according to real-time data values fetched from APIs.
 </p>
 
 ## Objective
 <p>
-  To be updated... 
+  The main objective of this project is to develop a web appplication that can display news based on real-time data.
 </p>
 
 ## Project Scope
 <p>
-  To be updated...
+  The project has a wide scope, as it is not intended to a particular organization. This project is going to develop generic software, which can be applied by any businesses organization. Moreover it provides facility to its users. Also the software is going to provide a huge amount of summary data.
 </p>
   
 ## Technology Used:
@@ -37,7 +32,7 @@
   - ![DJANGO](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green)
 
 - #### Deployment:
-  - Click to see deployement: <a href="#">![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)</a>
+  - Click to see deployement: <a href="https://newspad-django-app.herokuapp.com/">![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)</a>
 
 - #### Database:
   - ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
@@ -60,7 +55,94 @@
 
 ## Prerequisites:
 ```bash
-  To be updated...
+  asgiref==3.4.1
+  asttokens==2.0.5
+  autopep8==1.5.7
+  backcall==0.2.0
+  beautifulsoup4==4.11.1
+  black==22.1.0
+  bs4==0.0.1
+  certifi==2022.6.15
+  charset-normalizer==2.1.0
+  click==8.0.3
+  colorama==0.4.4
+  cycler==0.11.0
+  debugpy==1.5.1
+  decorator==5.1.1
+  distlib==0.3.4
+  dj-database-url==0.5.0
+  Django==3.2.6
+  django-debug-toolbar==3.4.0
+  django-heroku==0.3.1
+  entrypoints==0.4
+  executing==0.8.2
+  filelock==3.7.1
+  fonttools==4.33.3
+  gunicorn==20.1.0
+  idna==3.3
+  inflection==0.5.1
+  ipykernel==6.9.1
+  ipython==8.0.1
+  jedi==0.18.1
+  joblib==1.1.0
+  jupyter-client==7.1.2
+  jupyter-core==4.9.2
+  kiwisolver==1.4.3
+  lxml==4.9.1
+  matplotlib==3.5.2
+  matplotlib-inline==0.1.3
+  more-itertools==8.13.0
+  multitasking==0.0.11
+  mypy-extensions==0.4.3
+  nest-asyncio==1.5.4
+  newsapi-python==0.2.6
+  numpy==1.23.0
+  opencv-python==4.6.0.66
+  packaging==21.3
+  pandas==1.4.1
+  parso==0.8.3
+  pathspec==0.9.0
+  pickleshare==0.7.5
+  Pillow==9.1.1
+  pipenv==2022.6.7
+  platformdirs==2.5.0
+  plotly==5.9.0
+  prompt-toolkit==3.0.28
+  psycopg2==2.9.3
+  pure-eval==0.2.2
+  pycodestyle==2.7.0
+  Pygments==2.11.2
+  pyparsing==3.0.9
+  python-dateutil==2.8.2
+  python-decouple==3.4
+  pytz==2021.1
+  pyzmq==22.3.0
+  qrcode==7.3.1
+  Quandl==3.7.0
+  requests==2.28.1
+  scikit-learn==1.1.1
+  scipy==1.8.1
+  seaborn==0.11.2
+  six==1.16.0
+  sklearn==0.0
+  soupsieve==2.3.2.post1
+  sqlparse==0.4.2
+  stack-data==0.2.0
+  tenacity==8.0.1
+  threadpoolctl==3.1.0
+  toml==0.10.2
+  tomli==2.0.1
+  tornado==6.1
+  traitlets==5.1.1
+  tzdata==2022.1
+  Unipath==1.1
+  urllib3==1.26.9
+  virtualenv==20.14.1
+  virtualenv-clone==0.5.7
+  wcwidth==0.2.5
+  whitenoise==5.3.0
+  yfinance==0.1.72
+
 ```
 
 ## Project Installation:
