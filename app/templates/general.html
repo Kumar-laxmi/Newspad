@@ -215,7 +215,7 @@
             <p>Please subscribe is you like this website</p>
           </div>
           <div class="col-lg-6">
-            <form action="" method="post">
+            <form action="" method="post">{% csrf_token %}  
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
           </div>
