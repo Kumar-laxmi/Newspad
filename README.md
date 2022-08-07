@@ -207,7 +207,13 @@ To be updated soon...
 
 
 ## Output Screen-shots:
-To be updated soon...
+![image](https://user-images.githubusercontent.com/76027425/183294894-b2bf9706-07e0-4a18-a819-7226f032302f.png)
+![image](https://user-images.githubusercontent.com/76027425/183294902-814f8d9d-6248-4ca4-b68d-07aab3ddc02e.png)
+![image](https://user-images.githubusercontent.com/76027425/183294916-acca1d67-e1ab-40c2-b840-82eb3d9b69e8.png)
+![image](https://user-images.githubusercontent.com/76027425/183294996-c5be3b93-8eae-405b-8abf-5061307ed2b0.png)
+![image](https://user-images.githubusercontent.com/76027425/183295010-5073cd39-d096-4949-a09d-aab54f043cad.png)
+![image](https://user-images.githubusercontent.com/76027425/183295029-0e7cb945-15a3-4c31-9873-31904a2ebe72.png)
+
 
 
 
